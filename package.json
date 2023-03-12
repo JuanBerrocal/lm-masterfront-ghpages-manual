@@ -10,7 +10,9 @@
     "type-check:watch": "npm run type-check -- --watch",
     "clean": "rimraf dist",
     "test": "jest -c ./config/test/jest.js --verbose",
-    "test:watch": "npm run test -- --watchAll -i --no-cache"
+    "test:watch": "npm run test -- --watchAll -i --no-cache",
+    "build": "npm run type-check && npm run clean && npm run build:prod",
+    "build:prod": "webpack --config ./config/webpack/prod.js"
   },
   "author": "Lemoncode",
   "license": "MIT",
